@@ -1,0 +1,17 @@
+width=800
+height=400
+location=top_left
+x = 8
+y = 8
+show=drun
+prompt=何を探しているんですか、ご主人様？
+filter_rate=100
+allow_markup=true
+no_actions=true
+halign=fill
+orientation=vertical
+content_halign=fill
+insensitive=true
+allow_images=true
+gtk_dark=true
+dynamic_lines=true
