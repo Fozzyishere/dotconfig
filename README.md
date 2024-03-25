@@ -14,5 +14,7 @@
 # Credit
 
 [SolDoesTech](https://github.com/SolDoesTech) for most of the keyboard shortcut script
+
 [Fausto-Korpsvart](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme) for the GTK theme
+
 [さとざき幸](https://www.pixiv.net/en/users/73452463) for the epic background
