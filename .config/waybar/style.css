@@ -1,0 +1,145 @@
+@import "/home/fozzy/.config/waybar/style/tokyo-night.css";
+
+* {
+  font-family: "Roboto Nerd Font Regular";
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+/*gaps*/
+window > box {
+  margin-left: 0.45em;
+  margin-top: 0.5em;
+  margin-right: 0.45em;
+  margin-bottom: 0.2em;
+  background: @bg;
+  color: @white-text;
+  border-style: solid;
+  border-color: @terminal-blue;
+  border-width: 0.2em;
+  border-radius: 1em;
+}
+
+tooltip {
+  background: @bg;
+  opacity: 0.8;
+  border-width: 0.2em;
+  border-style: solid;
+  border-color: @terminal-blue;
+  border-radius: 1em;
+}
+
+tooltip label {
+  color: @terminal-white;
+}
+
+#workspaces {
+  background: @bg;
+  color: @terminal-white;
+  padding: 0em 0em 0em 0.75em;
+  margin: 0.25em 0em;
+}
+
+#workspaces button {
+  padding: 0.5em;
+  padding-right: 0.75em;
+  color: @terminal-black;
+}
+
+#workspaces button.active {
+  color: @terminal-black;
+  background: @terminal-blue;
+}
+
+#workspaces button.urgent {
+  color: @terminal-black;
+  background: @terminal-green;
+}
+
+#workspaces button:hover {
+  background: @comments;
+  color: @terminal-white;
+}
+
+#custom-light_dark,
+#cpu,
+#memory,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#tray,
+#backlight,
+#temperature {
+  background: @bg;
+  color: @terminal-white;
+  padding: 0em 0.75em;
+  margin: 0.25em 0em;
+}
+
+#custom-launch_wofi {
+  padding: 0em 0.5em 0em 0.75em;
+  margin: 0.25em 0em;
+  color: @terminal-white;
+}
+
+#window {
+  background: @bg;
+  color: @terminal-white;
+  padding: 0em 0.5em 0em 0.75em;
+  margin: 0.25em 0em;
+}
+
+#pulseaudio {
+  color: @terminal-magenta;
+  background: transparent;
+}
+
+#custom-power_btn {
+  background: transparent;
+  color: @terminal-white;
+  padding: 0em 1em 0em 0.75em;
+  margin: 0.25em 0em;
+}
+
+/* #network {
+  color: @terminal-magenta;
+} */
+
+#cpu,
+#memory {
+  color: @terminal-cyan;
+}
+
+#temperature,
+#battery {
+  color: @green;
+}
+
+#temperature.critical {
+  color: @terminal-red;
+}
+
+#battery.warning {
+  color: @terminal-yellow;
+}
+
+#battery.critical {
+  color: @terminal-red;
+}
+
+#backlight {
+  color: @teal;
+}
+
+#tray {
+  color: @terminal-white;
+}
+
+#clock {
+  color: @string;
+}

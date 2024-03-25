@@ -1,0 +1,72 @@
+@define-color accent #7aa2f7;
+@define-color txt #c0caf5;
+@define-color bg #1a1b26;
+@define-color bg2 #414868;
+@define-color accentsky #b4f9f8;
+
+* {
+  font-family: "Roboto Nerd Font Regular";
+  font-size: 12px;
+}
+
+/* Window */
+window {
+  margin: 0em;
+  padding: 1em;
+  background-color: ;
+  border-radius: 2em;
+}
+
+/* Inner Box */
+#inner-box {
+  margin: 0em;
+  padding: 1em;
+  border: none;
+  background-color: @bg;
+}
+/* Outer Box */
+#outer-box {
+  margin: 0em;
+  padding: 1em;
+  border-radius: 1em;
+  border-color: @accent;
+  border-width: 0.3em;
+  border-style: solid;
+  background-color: @bg;
+}
+
+/* Scroll */
+#scroll {
+  margin: 0px;
+  padding: 10px;
+  border: none;
+}
+
+/* Input */
+#input {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  color: @accent;
+  background-color: @bg2;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Text */
+#text {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  color: @txt;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Selected Entry */
+#entry:selected {
+  background-color: @accent;
+  background: linear-gradient(90deg, @accent, @accentsky);
+}
+
+#entry:selected #text {
+  color: @bg;
+}

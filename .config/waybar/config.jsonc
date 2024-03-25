@@ -1,0 +1,178 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "modules-left": 
+    [
+        "custom/launch_wofi",
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": 
+    [
+        "clock"
+    ],
+    "modules-right": 
+    [
+        // "network",
+        "cpu",
+        "memory",
+        "temperature",
+        "battery",
+        "backlight",
+        "pulseaudio",
+        "pulseaudio#microphone",
+        "tray",
+        "custom/power_btn"
+    ],
+
+    "hyprland/window": {
+        "format": "{initialTitle}"
+    },
+    "custom/launch_wofi": {
+        "format": "",
+        "on-click": "sh -c '(wofi)' & disown",
+        "tooltip": false
+    },
+    "custom/power_btn": {
+        "format": "󰐥",
+        "on-click": "sh -c '(wlogout --protocol layer-shell)' & disown",
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "active": "󰄛",
+            "default": ""
+        },
+        "persistent_workspaces": {
+            "*": 5
+        }
+    },
+    "cpu": {
+        "interval": 2,
+        "format": "  {usage}%|{avg_frequency}GHz",
+        /*"max-length": 10,*/
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    },
+
+    "memory": {
+        "interval": 10,
+        "format": "󰍛  {used}GiB",
+        "tooltip": true,
+        "tooltip-format": "Memory - {}% used",
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    },
+
+    "tray": {
+        "icon-size": 13,
+        "spacing": 15
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}  {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "~/.config/waybar/scripts/brightness --inc",
+        "on-scroll-down": "~/.config/waybar/scripts/brightness --dec",
+        "min-length": 6
+    },
+
+    "battery": {
+        "states": {
+            "good": 100,
+            "warning": 50,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "   {capacity}%",
+        "format-plugged": "   {capacity}%",
+        "format-alt": "{time}  {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰝟",
+        "on-click": "~/.config/waybar/scripts/volume --toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
+        "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
+            "phone": "",
+            "portable": "",
+            "car": "󰄋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        }
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "on-click": "~/.config/waybar/scripts/volume --toggle-mic",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "~/.config/waybar/scripts/volume --mic-inc",
+        "on-scroll-down": "~/.config/waybar/scripts/volume --mic-dec",
+        "scroll-step": 5
+    },
+
+    "clock": {
+        "format": "󰅐  {:%I:%M %p        %A, %b %d}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "mode",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    },
+
+    // "network": {
+    //     "interval": 2,
+    //     "format": "{ifname}",
+    //     "format-wifi": "󰇚  {bandwidthDownBytes}    󰕒  {bandwidthUpBytes}",
+    //     "format-ethernet": "{ipaddr}/{cidr} ",
+    //     "format-disconnected": "", //An empty format will hide the module.
+    //     "tooltip-format": "{ifname} via {gwaddr} ",
+    //     "tooltip-format-wifi": "{essid} ({signalStrength}%) signal strength",
+    //     "tooltip-format-ethernet": "{ifname} ",
+    //     "tooltip-format-disconnected": "Disconnected"
+    // },
+
+    "temperature": {
+        "thermal-zone": 0,
+        "format": "  {temperatureC}°C",
+        "critical-threshold": 60,
+        "format-critical": "  {temperatureC}°C",
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    }
+}
