@@ -1,0 +1,17 @@
+@define-color bg #1a1b26;
+@define-color terminal-black #414868;
+@define-color comments #565f89;
+@define-color semantic-highlight #cfc9c2;
+@define-color html-text #9aa5ce;
+@define-color foreground #a9b1d6;
+@define-color terminal-white #c0caf5;
+@define-color terminal-magenta #bb9af7;
+@define-color terminal-red #f7768e;
+@define-color orange #ff9e64;
+@define-color terminal-yellow #e0af68;
+@define-color green #9ece6a;
+@define-color terminal-green #73daca;
+@define-color string #b4f9f8;
+@define-color teal #2ac3de;
+@define-color terminal-cyan #7dcfff;
+@define-color terminal-blue #7aa2f7;
